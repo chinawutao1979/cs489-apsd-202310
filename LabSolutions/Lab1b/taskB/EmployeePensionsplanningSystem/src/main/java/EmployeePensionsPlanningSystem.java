@@ -106,6 +106,8 @@ public class EmployeePensionsPlanningSystem {
             employees.add(new Employee(2, "Benard", "Shaw", parseDate("2018-10-03"), 197750.00));
             employees.add(new Employee(3, "Carly", "Agar", parseDate("2014-05-16"), 842000.75));
             employees.add(new Employee(4, "Wesley", "Schneider", parseDate("2018-11-02"), 74500.00));
+            employees.get(0).setPensionPlan(new PensionPlan("EX1089", parseDate("2023-01-17"), 100.00, 1));
+            employees.get(2).setPensionPlan(new PensionPlan("SM2307", parseDate("2019-11-04"), 1555.50, 3));
 
             pensionPlans.add(new PensionPlan("EX1089", parseDate("2023-01-17"), 100.00, 1));
             pensionPlans.add(new PensionPlan("SM2307", parseDate("2019-11-04"), 1555.50, 3));

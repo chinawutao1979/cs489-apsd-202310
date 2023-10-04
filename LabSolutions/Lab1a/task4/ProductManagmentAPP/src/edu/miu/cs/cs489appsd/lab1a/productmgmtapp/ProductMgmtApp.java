@@ -1,8 +1,7 @@
-package edu.miu.cs.cs489appsd.lab1a.productmgmtapp.model;
+package edu.miu.cs.cs489appsd.lab1a.productmgmtapp;
 
 import edu.miu.cs.cs489appsd.lab1a.productmgmtapp.model.Product;
 
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
@@ -21,33 +20,32 @@ public class ProductMgmtApp {
 
     public static void printProducts(Product[] products) {
         if(products == null || products.length==0){
-            ///
+            // Handle the case where there are no products
             return;
         }
         // Implement code to print products in JSON, XML, and CSV formats
         // Sort the products by product name before printing
 
         Arrays.sort(products, Comparator.comparing(Product::getName));
-        //Streams API
-       var sortedProducts =  Arrays.stream(products)
-                //.sorted(Comparator.comparing(Product::getName))
-               .sorted(Comparator.comparing((p->p.getName())))
-               .toList();
-       var numProducts= sortedProducts.size();
-       for (int i=0;i<sortedProducts.size();i++){
-           if((i+1)<numProducts){
-               System.out.printf("%s,\n",sortedProducts.get(i).toJOSONString());
-           }else {
-               System.out.printf(sortedProducts.get(i).toJOSONString()+"\n");
-           }
-       }
+        // Streams API
+//        var sortedProducts =  Arrays.stream(products)
+//                .sorted(Comparator.comparing((p->p.getName())))
+//                .toList();
+//        var numProducts= sortedProducts.size();
+//        for (int i=0;i<sortedProducts.size();i++){
+//            if((i+1)<numProducts){
+//                System.out.printf("%s,\n",sortedProducts.get(i).toJsonString());
+//            }else {
+//                System.out.printf(sortedProducts.get(i).toJsonString()+"\n");
+//            }
+//        }
 
         // Print JSON-formatted list of products
         // Implement JSON formatting and printing here
 
-        // 构建 JSON 格式的字符串
+        // Build a JSON-formatted string
         StringBuilder jsonBuilder = new StringBuilder();
-        jsonBuilder.append("[\n"); // JSON 数组的开始
+        jsonBuilder.append("[\n"); // Start of JSON array
 
         for (int i = 0; i < products.length; i++) {
             jsonBuilder.append("  {");
@@ -63,16 +61,17 @@ public class ProductMgmtApp {
             }
         }
 
-        jsonBuilder.append("\n]"); // JSON 数组的结束
+        jsonBuilder.append("\n]"); // End of JSON array
 
-        // 打印 JSON 格式的产品列表
+        // Print JSON-formatted product list
         System.out.println("JSON-formatted list of all Products:");
         System.out.println("----------------------------------------------------");
         System.out.println(jsonBuilder.toString());
 
         // Print XML-formatted list of products
         // Implement XML formatting and printing here
-// 构建 XML 格式的字符串
+
+        // Build an XML-formatted string
         StringBuilder xmlBuilder = new StringBuilder();
         xmlBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
         xmlBuilder.append("<Products>\n");
@@ -89,13 +88,15 @@ public class ProductMgmtApp {
 
         xmlBuilder.append("</Products>");
 
-        // 打印 XML 格式的产品列表
+        // Print XML-formatted product list
         System.out.println("XML-formatted list of products:");
         System.out.println("----------------------------------------------------");
         System.out.println(xmlBuilder.toString());
+
         // Print CSV-formatted list of products
         // Implement CSV formatting and printing here
-        // 构建 CSV 格式的字符串
+
+        // Build a CSV-formatted string
         StringBuilder csvBuilder = new StringBuilder();
         csvBuilder.append("productId,name,dateSupplied,quantityInStock,unitPrice\n");
 
@@ -107,7 +108,7 @@ public class ProductMgmtApp {
             csvBuilder.append(product.getUnitPrice()).append("\n");
         }
 
-        // 打印 CSV 格式的产品列表
+        // Print CSV-formatted product list
         System.out.println("CSV-formatted list of products:");
         System.out.println("----------------------------------------------------");
         System.out.println(csvBuilder.toString());

@@ -57,7 +57,7 @@ public class EmployeePensionsPlanningSystem {
     private void listEmployees() {
         List<Employee> sortedEmployees = employees.stream()
                 .sorted(Comparator.comparing(Employee::getLastName)
-                        .thenComparing(Employee::getYearlySalary).reversed())
+                        .thenComparing(Employee::getYearlySalary,Comparator.reverseOrder()))
                 .collect(Collectors.toList());
 
         try {

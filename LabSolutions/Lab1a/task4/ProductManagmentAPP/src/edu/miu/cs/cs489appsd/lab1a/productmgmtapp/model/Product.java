@@ -3,7 +3,7 @@ package edu.miu.cs.cs489appsd.lab1a.productmgmtapp.model;
 import java.util.Date;
 
 public class Product {
-    private String productId;
+    private Long productId;
     private String name;
     private Date dateSupplied;
     private int quantityInStock;
@@ -14,7 +14,7 @@ public class Product {
         // Default constructor
     }
 
-    public Product(String productId, String name, Date dateSupplied, int quantityInStock, double unitPrice) {
+    public Product(Long productId, String name, Date dateSupplied, int quantityInStock, double unitPrice) {
         this.productId = productId;
         this.name = name;
         this.dateSupplied = dateSupplied;
@@ -37,11 +37,11 @@ public class Product {
         return String.format("{\"productId\":%s, \"name\":%s, \"dateSupplied\":%s, \"quantityInStock\":%d, \"unitPrice\":%,.2f}",productId,name,dateSupplied,quantityInStock,unitPrice);
     }
 
-    public String getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 

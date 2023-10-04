@@ -10,9 +10,9 @@ public class ProductMgmtApp {
     public static void main(String[] args) {
         // Create an array of Products with company data
         Product[] products = {
-                new Product("3128874119", "Banana", new Date(2023, 1, 24), 124, 0.55),
-                new Product("2927458265", "Apple", new Date(2022, 12, 9), 18, 1.09),
-                new Product("9189927460", "Carrot", new Date(2023, 3, 31), 89, 2.99)         // Add more products as needed
+                new Product(Long.valueOf("3128874119"), "Banana", new Date(2023, 1, 24), 124, 0.55),
+                new Product(Long.valueOf("2927458265"), "Apple", new Date(2022, 12, 9), 18, 1.09),
+                new Product(Long.valueOf("9189927460"), "Carrot", new Date(2023, 3, 31), 89, 2.99)         // Add more products as needed
         };
         // Invoke the printProducts method to print the products in various formats
         printProducts(products);

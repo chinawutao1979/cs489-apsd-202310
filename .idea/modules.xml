@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LabSolutions/Lab1a/task4/ProductManagmentAPP/ProductManagmentAPP.iml" filepath="$PROJECT_DIR$/LabSolutions/Lab1a/task4/ProductManagmentAPP/ProductManagmentAPP.iml" />
       <module fileurl="file://$PROJECT_DIR$/LabSolutions/Lab1a/ProductMgntAPP/ProductMgntAPP.iml" filepath="$PROJECT_DIR$/LabSolutions/Lab1a/ProductMgntAPP/ProductMgntAPP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cs489-apsd-202310.iml" filepath="$PROJECT_DIR$/cs489-apsd-202310.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RedisSample/RedisSample.iml" filepath="$PROJECT_DIR$/RedisSample/RedisSample.iml" />
     </modules>
   </component>
 </project>
